@@ -5,11 +5,11 @@ const userSchema = new mongoose.Schema(
         username: {
             type: String,
             required: true,
-            unique: true,
+            unique: true
         },
         password: {
             type: String,
-            required: true,
+            required: true
         },
         gender: {
             type: String,
@@ -19,9 +19,10 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        admin: {
-            type: Boolean,
-            default: false
+        role: {
+            type: String,
+            enum: ['admin', 'visitor'],
+            default: 'visitor'
         }
     },
     { timestamps: true }
