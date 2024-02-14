@@ -45,7 +45,7 @@ const signIn = async (req, res) => {
                 id: user._id,
                 token,
                 username: user.username,
-                admin: user.admin
+                role: user.role
             }
         });
     } catch (error) {
